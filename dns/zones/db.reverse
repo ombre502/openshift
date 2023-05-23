@@ -1,0 +1,20 @@
+$TTL    604800
+@       IN      SOA     dev-service-instance-centos.ocp.lan. contact.ocp.lan (
+                  1     ; Serial
+             604800     ; Refresh
+              86400     ; Retry
+            2419200     ; Expire
+             604800     ; Minimum
+)
+
+  IN      NS      dev-service-instance-centos.ocp.lan.
+
+1      IN    PTR    dev-service-instance-centos.ocp.lan.
+1      IN    PTR    api.ocp.lan.
+1      IN    PTR    api-int.ocp.lan.
+;
+6    IN    PTR    dev-service-instance-centos.ocp.lan.
+;
+4    IN    PTR    dev-instance-cp-0.ocp.lan.
+;
+5    IN    PTR    dev-instance-worker-0.ocp.lan.

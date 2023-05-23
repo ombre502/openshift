@@ -1,0 +1,34 @@
+$TTL    604800
+@       IN      SOA     dev-service-instance-centos.ocp.lan. contact.ocp.lan (
+                  1     ; Serial
+             604800     ; Refresh
+              86400     ; Retry
+            2419200     ; Expire
+             604800     ; Minimum
+)
+        IN      NS      ocp-svc
+
+dev-service-instance-centos.ocp.lan.          IN      A       10.0.0.3
+
+; Temp Bootstrap Node
+dev-instance-bootstrap.ocp.lan.        IN      A      10.0.0.6
+
+; Control Plane Nodes
+dev-instance-cp-0.ocp.lan.         IN      A      10.0.0.4
+
+; Worker Nodes
+dev-instance-worker-0.ocp.lan.        IN      A      10.0.0.5
+
+; OpenShift Internal - Load balancer
+api.ocp.lan.        IN    A    10.0.0.3
+api-int.ocp.lan.    IN    A    10.0.0.3
+*.apps.ocp.lan.     IN    A    10.0.0.3
+
+; ETCD Cluster
+etcd-0.ocp.lan.    IN    A     10.0.0.4
+
+; OpenShift Internal SRV records (cluster name = lab)
+_etcd-server-ssl._tcp.ocp.lan.    86400     IN    SRV     0    10    2380    etcd-0.lab
+
+oauth-openshift.apps.ocp.lan.     IN     A     10.0.0.3
+console-openshift-console.apps.ocp.lan.     IN     A     10.0.0.3
